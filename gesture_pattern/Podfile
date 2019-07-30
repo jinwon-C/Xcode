@@ -1,0 +1,36 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'gesture_pattern' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'SwiftSocket'
+  # Pods for gesture_pattern
+
+  target 'gesture_patternTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'gesture_patternUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'gesture_pattern WatchKit App' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for gesture_pattern WatchKit App
+
+end
+
+target 'gesture_pattern WatchKit Extension' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for gesture_pattern WatchKit Extension
+
+end

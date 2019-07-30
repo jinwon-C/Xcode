@@ -1,0 +1,1099 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D61D773CC447947588618CD /* Pods_gesture_patternUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 594283CB5ECCB1C6ED088CE3 /* Pods_gesture_patternUITests.framework */; };
+		25C93CE40059A6B4104958B8 /* Pods_gesture_pattern_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D59102D6F64D2D5929BDD95 /* Pods_gesture_pattern_WatchKit_Extension.framework */; };
+		4D3A375EB3772E2150C6970F /* Pods_gesture_pattern_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC96D04AFF8AFA2836F412B /* Pods_gesture_pattern_WatchKit_App.framework */; };
+		8A375CFC0A9AA7DEA2FE5448 /* Pods_gesture_pattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D02317F5F3E3F78CF15ED7B /* Pods_gesture_pattern.framework */; };
+		A3D52B878608EB7752810C9E /* Pods_gesture_patternTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138357838F913EE80B35FE5C /* Pods_gesture_patternTests.framework */; };
+		CD95AAA222E1B07100B3908E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AAA122E1B07100B3908E /* AppDelegate.swift */; };
+		CD95AAA422E1B07100B3908E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AAA322E1B07100B3908E /* ViewController.swift */; };
+		CD95AAA722E1B07100B3908E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD95AAA522E1B07100B3908E /* Main.storyboard */; };
+		CD95AAA922E1B07100B3908E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD95AAA822E1B07100B3908E /* Assets.xcassets */; };
+		CD95AAAC22E1B07100B3908E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD95AAAA22E1B07100B3908E /* LaunchScreen.storyboard */; };
+		CD95AAB722E1B07100B3908E /* gesture_patternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AAB622E1B07100B3908E /* gesture_patternTests.swift */; };
+		CD95AAC222E1B07100B3908E /* gesture_patternUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AAC122E1B07100B3908E /* gesture_patternUITests.swift */; };
+		CD95AAC722E1B07100B3908E /* gesture_pattern WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CD95AAC622E1B07100B3908E /* gesture_pattern WatchKit App.app */; };
+		CD95AACD22E1B07100B3908E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD95AACB22E1B07100B3908E /* Interface.storyboard */; };
+		CD95AACF22E1B07200B3908E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD95AACE22E1B07200B3908E /* Assets.xcassets */; };
+		CD95AAD622E1B07200B3908E /* gesture_pattern WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CD95AAD522E1B07200B3908E /* gesture_pattern WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CD95AADB22E1B07200B3908E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AADA22E1B07200B3908E /* InterfaceController.swift */; };
+		CD95AADD22E1B07200B3908E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AADC22E1B07200B3908E /* ExtensionDelegate.swift */; };
+		CD95AADF22E1B07200B3908E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AADE22E1B07200B3908E /* NotificationController.swift */; };
+		CD95AAE122E1B07200B3908E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD95AAE022E1B07200B3908E /* Assets.xcassets */; };
+		CDBB5D6122E55C9A0088240D /* PTsensorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBB5D6022E55C9A0088240D /* PTsensorInterfaceController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD95AAB322E1B07100B3908E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD95AA9622E1B07100B3908E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD95AA9D22E1B07100B3908E;
+			remoteInfo = gesture_pattern;
+		};
+		CD95AABE22E1B07100B3908E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD95AA9622E1B07100B3908E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD95AA9D22E1B07100B3908E;
+			remoteInfo = gesture_pattern;
+		};
+		CD95AAC822E1B07100B3908E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD95AA9622E1B07100B3908E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD95AAC522E1B07100B3908E;
+			remoteInfo = "gesture_pattern WatchKit App";
+		};
+		CD95AAD722E1B07200B3908E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD95AA9622E1B07100B3908E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD95AAD422E1B07200B3908E;
+			remoteInfo = "gesture_pattern WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CD95AAE922E1B07200B3908E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CD95AAD622E1B07200B3908E /* gesture_pattern WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AAED22E1B07200B3908E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CD95AAC722E1B07100B3908E /* gesture_pattern WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDBB5D5F22E550BB0088240D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		138357838F913EE80B35FE5C /* Pods_gesture_patternTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gesture_patternTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ADBF6D4755D159325F2F473 /* Pods-gesture_patternTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_patternTests.debug.xcconfig"; path = "Target Support Files/Pods-gesture_patternTests/Pods-gesture_patternTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3AC5538C81D12094406817F4 /* Pods-gesture_patternTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_patternTests.release.xcconfig"; path = "Target Support Files/Pods-gesture_patternTests/Pods-gesture_patternTests.release.xcconfig"; sourceTree = "<group>"; };
+		3CC96D04AFF8AFA2836F412B /* Pods_gesture_pattern_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gesture_pattern_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		449F8C510B3F28C588260CB8 /* Pods-gesture_patternUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_patternUITests.debug.xcconfig"; path = "Target Support Files/Pods-gesture_patternUITests/Pods-gesture_patternUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5601796BA2C5BEB6E9BF2553 /* Pods-gesture_patternUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_patternUITests.release.xcconfig"; path = "Target Support Files/Pods-gesture_patternUITests/Pods-gesture_patternUITests.release.xcconfig"; sourceTree = "<group>"; };
+		594283CB5ECCB1C6ED088CE3 /* Pods_gesture_patternUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gesture_patternUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D59102D6F64D2D5929BDD95 /* Pods_gesture_pattern_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gesture_pattern_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A5F400AA4F4D7D5BAFB10B6 /* Pods-gesture_pattern WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-gesture_pattern WatchKit App/Pods-gesture_pattern WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		7D02317F5F3E3F78CF15ED7B /* Pods_gesture_pattern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gesture_pattern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CB602E707DD7632286B6ADB /* Pods-gesture_pattern WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-gesture_pattern WatchKit Extension/Pods-gesture_pattern WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		C4267E0A6B6704C145DA3315 /* Pods-gesture_pattern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern.release.xcconfig"; path = "Target Support Files/Pods-gesture_pattern/Pods-gesture_pattern.release.xcconfig"; sourceTree = "<group>"; };
+		CD95AA9E22E1B07100B3908E /* gesture_pattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gesture_pattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD95AAA122E1B07100B3908E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD95AAA322E1B07100B3908E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD95AAA622E1B07100B3908E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD95AAA822E1B07100B3908E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD95AAAB22E1B07100B3908E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD95AAAD22E1B07100B3908E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD95AAB222E1B07100B3908E /* gesture_patternTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gesture_patternTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD95AAB622E1B07100B3908E /* gesture_patternTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gesture_patternTests.swift; sourceTree = "<group>"; };
+		CD95AAB822E1B07100B3908E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD95AABD22E1B07100B3908E /* gesture_patternUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gesture_patternUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD95AAC122E1B07100B3908E /* gesture_patternUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gesture_patternUITests.swift; sourceTree = "<group>"; };
+		CD95AAC322E1B07100B3908E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD95AAC622E1B07100B3908E /* gesture_pattern WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gesture_pattern WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD95AACC22E1B07100B3908E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		CD95AACE22E1B07200B3908E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD95AAD022E1B07200B3908E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD95AAD522E1B07200B3908E /* gesture_pattern WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "gesture_pattern WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD95AADA22E1B07200B3908E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		CD95AADC22E1B07200B3908E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		CD95AADE22E1B07200B3908E /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		CD95AAE022E1B07200B3908E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD95AAE222E1B07200B3908E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD95AAE322E1B07200B3908E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		CDBB5D6022E55C9A0088240D /* PTsensorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTsensorInterfaceController.swift; sourceTree = "<group>"; };
+		CDBB5D6222E55FD80088240D /* ptDraw WatchKit Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ptDraw WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		E32441F7B864E61AE6DEA0A8 /* Pods-gesture_pattern WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-gesture_pattern WatchKit Extension/Pods-gesture_pattern WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		E8EDB2202E45A7065135C607 /* Pods-gesture_pattern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern.debug.xcconfig"; path = "Target Support Files/Pods-gesture_pattern/Pods-gesture_pattern.debug.xcconfig"; sourceTree = "<group>"; };
+		F42875553810BBCA54C06980 /* Pods-gesture_pattern WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-gesture_pattern WatchKit App/Pods-gesture_pattern WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A881D0EB3CCCE3EA8B3AD11D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D3A375EB3772E2150C6970F /* Pods_gesture_pattern_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AA9B22E1B07100B3908E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A375CFC0A9AA7DEA2FE5448 /* Pods_gesture_pattern.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AAAF22E1B07100B3908E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D52B878608EB7752810C9E /* Pods_gesture_patternTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AABA22E1B07100B3908E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D61D773CC447947588618CD /* Pods_gesture_patternUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AAD222E1B07200B3908E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25C93CE40059A6B4104958B8 /* Pods_gesture_pattern_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A276AC41CF079DD2A7E4311 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8EDB2202E45A7065135C607 /* Pods-gesture_pattern.debug.xcconfig */,
+				C4267E0A6B6704C145DA3315 /* Pods-gesture_pattern.release.xcconfig */,
+				7A5F400AA4F4D7D5BAFB10B6 /* Pods-gesture_pattern WatchKit App.debug.xcconfig */,
+				F42875553810BBCA54C06980 /* Pods-gesture_pattern WatchKit App.release.xcconfig */,
+				9CB602E707DD7632286B6ADB /* Pods-gesture_pattern WatchKit Extension.debug.xcconfig */,
+				E32441F7B864E61AE6DEA0A8 /* Pods-gesture_pattern WatchKit Extension.release.xcconfig */,
+				2ADBF6D4755D159325F2F473 /* Pods-gesture_patternTests.debug.xcconfig */,
+				3AC5538C81D12094406817F4 /* Pods-gesture_patternTests.release.xcconfig */,
+				449F8C510B3F28C588260CB8 /* Pods-gesture_patternUITests.debug.xcconfig */,
+				5601796BA2C5BEB6E9BF2553 /* Pods-gesture_patternUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5ADF82F004ABD805F8D19FA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D02317F5F3E3F78CF15ED7B /* Pods_gesture_pattern.framework */,
+				3CC96D04AFF8AFA2836F412B /* Pods_gesture_pattern_WatchKit_App.framework */,
+				6D59102D6F64D2D5929BDD95 /* Pods_gesture_pattern_WatchKit_Extension.framework */,
+				138357838F913EE80B35FE5C /* Pods_gesture_patternTests.framework */,
+				594283CB5ECCB1C6ED088CE3 /* Pods_gesture_patternUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD95AA9522E1B07100B3908E = {
+			isa = PBXGroup;
+			children = (
+				CD95AAA022E1B07100B3908E /* gesture_pattern */,
+				CD95AAB522E1B07100B3908E /* gesture_patternTests */,
+				CD95AAC022E1B07100B3908E /* gesture_patternUITests */,
+				CD95AACA22E1B07100B3908E /* gesture_pattern WatchKit App */,
+				CD95AAD922E1B07200B3908E /* gesture_pattern WatchKit Extension */,
+				CD95AA9F22E1B07100B3908E /* Products */,
+				5A276AC41CF079DD2A7E4311 /* Pods */,
+				5ADF82F004ABD805F8D19FA7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CD95AA9F22E1B07100B3908E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD95AA9E22E1B07100B3908E /* gesture_pattern.app */,
+				CD95AAB222E1B07100B3908E /* gesture_patternTests.xctest */,
+				CD95AABD22E1B07100B3908E /* gesture_patternUITests.xctest */,
+				CD95AAC622E1B07100B3908E /* gesture_pattern WatchKit App.app */,
+				CD95AAD522E1B07200B3908E /* gesture_pattern WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD95AAA022E1B07100B3908E /* gesture_pattern */ = {
+			isa = PBXGroup;
+			children = (
+				CD95AAA122E1B07100B3908E /* AppDelegate.swift */,
+				CD95AAA322E1B07100B3908E /* ViewController.swift */,
+				CD95AAA522E1B07100B3908E /* Main.storyboard */,
+				CD95AAA822E1B07100B3908E /* Assets.xcassets */,
+				CD95AAAA22E1B07100B3908E /* LaunchScreen.storyboard */,
+				CD95AAAD22E1B07100B3908E /* Info.plist */,
+			);
+			path = gesture_pattern;
+			sourceTree = "<group>";
+		};
+		CD95AAB522E1B07100B3908E /* gesture_patternTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD95AAB622E1B07100B3908E /* gesture_patternTests.swift */,
+				CD95AAB822E1B07100B3908E /* Info.plist */,
+			);
+			path = gesture_patternTests;
+			sourceTree = "<group>";
+		};
+		CD95AAC022E1B07100B3908E /* gesture_patternUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD95AAC122E1B07100B3908E /* gesture_patternUITests.swift */,
+				CD95AAC322E1B07100B3908E /* Info.plist */,
+			);
+			path = gesture_patternUITests;
+			sourceTree = "<group>";
+		};
+		CD95AACA22E1B07100B3908E /* gesture_pattern WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				CD95AACB22E1B07100B3908E /* Interface.storyboard */,
+				CD95AACE22E1B07200B3908E /* Assets.xcassets */,
+				CD95AAD022E1B07200B3908E /* Info.plist */,
+			);
+			path = "gesture_pattern WatchKit App";
+			sourceTree = "<group>";
+		};
+		CD95AAD922E1B07200B3908E /* gesture_pattern WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CD95AADA22E1B07200B3908E /* InterfaceController.swift */,
+				CD95AADC22E1B07200B3908E /* ExtensionDelegate.swift */,
+				CD95AADE22E1B07200B3908E /* NotificationController.swift */,
+				CDBB5D6222E55FD80088240D /* ptDraw WatchKit Extension.entitlements */,
+				CDBB5D6022E55C9A0088240D /* PTsensorInterfaceController.swift */,
+				CD95AAE022E1B07200B3908E /* Assets.xcassets */,
+				CD95AAE222E1B07200B3908E /* Info.plist */,
+				CD95AAE322E1B07200B3908E /* PushNotificationPayload.apns */,
+			);
+			path = "gesture_pattern WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD95AA9D22E1B07100B3908E /* gesture_pattern */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD95AAEE22E1B07200B3908E /* Build configuration list for PBXNativeTarget "gesture_pattern" */;
+			buildPhases = (
+				02E090DD43CA11A8BBA12FC9 /* [CP] Check Pods Manifest.lock */,
+				CD95AA9A22E1B07100B3908E /* Sources */,
+				CD95AA9B22E1B07100B3908E /* Frameworks */,
+				CD95AA9C22E1B07100B3908E /* Resources */,
+				CD95AAED22E1B07200B3908E /* Embed Watch Content */,
+				8824ACCC7AA5376AD65D0299 /* [CP] Embed Pods Frameworks */,
+				CDBB5D5F22E550BB0088240D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD95AAC922E1B07100B3908E /* PBXTargetDependency */,
+			);
+			name = gesture_pattern;
+			productName = gesture_pattern;
+			productReference = CD95AA9E22E1B07100B3908E /* gesture_pattern.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD95AAB122E1B07100B3908E /* gesture_patternTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD95AAF122E1B07200B3908E /* Build configuration list for PBXNativeTarget "gesture_patternTests" */;
+			buildPhases = (
+				B6B6DF0B4E19E831D9AF21E5 /* [CP] Check Pods Manifest.lock */,
+				CD95AAAE22E1B07100B3908E /* Sources */,
+				CD95AAAF22E1B07100B3908E /* Frameworks */,
+				CD95AAB022E1B07100B3908E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD95AAB422E1B07100B3908E /* PBXTargetDependency */,
+			);
+			name = gesture_patternTests;
+			productName = gesture_patternTests;
+			productReference = CD95AAB222E1B07100B3908E /* gesture_patternTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD95AABC22E1B07100B3908E /* gesture_patternUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD95AAF422E1B07200B3908E /* Build configuration list for PBXNativeTarget "gesture_patternUITests" */;
+			buildPhases = (
+				CADCFD539D298877B207B348 /* [CP] Check Pods Manifest.lock */,
+				CD95AAB922E1B07100B3908E /* Sources */,
+				CD95AABA22E1B07100B3908E /* Frameworks */,
+				CD95AABB22E1B07100B3908E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD95AABF22E1B07100B3908E /* PBXTargetDependency */,
+			);
+			name = gesture_patternUITests;
+			productName = gesture_patternUITests;
+			productReference = CD95AABD22E1B07100B3908E /* gesture_patternUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		CD95AAC522E1B07100B3908E /* gesture_pattern WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD95AAEA22E1B07200B3908E /* Build configuration list for PBXNativeTarget "gesture_pattern WatchKit App" */;
+			buildPhases = (
+				ED707BD1C91E70D4E20AC2BB /* [CP] Check Pods Manifest.lock */,
+				CD95AAC422E1B07100B3908E /* Resources */,
+				CD95AAE922E1B07200B3908E /* Embed App Extensions */,
+				A881D0EB3CCCE3EA8B3AD11D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD95AAD822E1B07200B3908E /* PBXTargetDependency */,
+			);
+			name = "gesture_pattern WatchKit App";
+			productName = "gesture_pattern WatchKit App";
+			productReference = CD95AAC622E1B07100B3908E /* gesture_pattern WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CD95AAD422E1B07200B3908E /* gesture_pattern WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD95AAE622E1B07200B3908E /* Build configuration list for PBXNativeTarget "gesture_pattern WatchKit Extension" */;
+			buildPhases = (
+				8417364ADCD335EE2ED1F989 /* [CP] Check Pods Manifest.lock */,
+				CD95AAD122E1B07200B3908E /* Sources */,
+				CD95AAD222E1B07200B3908E /* Frameworks */,
+				CD95AAD322E1B07200B3908E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "gesture_pattern WatchKit Extension";
+			productName = "gesture_pattern WatchKit Extension";
+			productReference = CD95AAD522E1B07200B3908E /* gesture_pattern WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD95AA9622E1B07100B3908E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Jinwon;
+				TargetAttributes = {
+					CD95AA9D22E1B07100B3908E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					CD95AAB122E1B07100B3908E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = CD95AA9D22E1B07100B3908E;
+					};
+					CD95AABC22E1B07100B3908E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = CD95AA9D22E1B07100B3908E;
+					};
+					CD95AAC522E1B07100B3908E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					CD95AAD422E1B07200B3908E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = CD95AA9922E1B07100B3908E /* Build configuration list for PBXProject "gesture_pattern" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD95AA9522E1B07100B3908E;
+			productRefGroup = CD95AA9F22E1B07100B3908E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD95AA9D22E1B07100B3908E /* gesture_pattern */,
+				CD95AAB122E1B07100B3908E /* gesture_patternTests */,
+				CD95AABC22E1B07100B3908E /* gesture_patternUITests */,
+				CD95AAC522E1B07100B3908E /* gesture_pattern WatchKit App */,
+				CD95AAD422E1B07200B3908E /* gesture_pattern WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD95AA9C22E1B07100B3908E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD95AAAC22E1B07100B3908E /* LaunchScreen.storyboard in Resources */,
+				CD95AAA922E1B07100B3908E /* Assets.xcassets in Resources */,
+				CD95AAA722E1B07100B3908E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AAB022E1B07100B3908E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AABB22E1B07100B3908E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AAC422E1B07100B3908E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD95AACF22E1B07200B3908E /* Assets.xcassets in Resources */,
+				CD95AACD22E1B07100B3908E /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AAD322E1B07200B3908E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD95AAE122E1B07200B3908E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02E090DD43CA11A8BBA12FC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gesture_pattern-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8417364ADCD335EE2ED1F989 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gesture_pattern WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8824ACCC7AA5376AD65D0299 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gesture_pattern/Pods-gesture_pattern-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gesture_pattern/Pods-gesture_pattern-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gesture_pattern/Pods-gesture_pattern-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6B6DF0B4E19E831D9AF21E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gesture_patternTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CADCFD539D298877B207B348 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gesture_patternUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED707BD1C91E70D4E20AC2BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gesture_pattern WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD95AA9A22E1B07100B3908E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD95AAA422E1B07100B3908E /* ViewController.swift in Sources */,
+				CD95AAA222E1B07100B3908E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AAAE22E1B07100B3908E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD95AAB722E1B07100B3908E /* gesture_patternTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AAB922E1B07100B3908E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD95AAC222E1B07100B3908E /* gesture_patternUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD95AAD122E1B07200B3908E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD95AADF22E1B07200B3908E /* NotificationController.swift in Sources */,
+				CDBB5D6122E55C9A0088240D /* PTsensorInterfaceController.swift in Sources */,
+				CD95AADD22E1B07200B3908E /* ExtensionDelegate.swift in Sources */,
+				CD95AADB22E1B07200B3908E /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD95AAB422E1B07100B3908E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD95AA9D22E1B07100B3908E /* gesture_pattern */;
+			targetProxy = CD95AAB322E1B07100B3908E /* PBXContainerItemProxy */;
+		};
+		CD95AABF22E1B07100B3908E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD95AA9D22E1B07100B3908E /* gesture_pattern */;
+			targetProxy = CD95AABE22E1B07100B3908E /* PBXContainerItemProxy */;
+		};
+		CD95AAC922E1B07100B3908E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD95AAC522E1B07100B3908E /* gesture_pattern WatchKit App */;
+			targetProxy = CD95AAC822E1B07100B3908E /* PBXContainerItemProxy */;
+		};
+		CD95AAD822E1B07200B3908E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD95AAD422E1B07200B3908E /* gesture_pattern WatchKit Extension */;
+			targetProxy = CD95AAD722E1B07200B3908E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD95AAA522E1B07100B3908E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD95AAA622E1B07100B3908E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD95AAAA22E1B07100B3908E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD95AAAB22E1B07100B3908E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CD95AACB22E1B07100B3908E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD95AACC22E1B07100B3908E /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD95AAE422E1B07200B3908E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD95AAE522E1B07200B3908E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD95AAE722E1B07200B3908E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CB602E707DD7632286B6ADB /* Pods-gesture_pattern WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXT8L37R34;
+				INFOPLIST_FILE = "gesture_pattern WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NCL.gesture-pattern.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		CD95AAE822E1B07200B3908E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E32441F7B864E61AE6DEA0A8 /* Pods-gesture_pattern WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXT8L37R34;
+				INFOPLIST_FILE = "gesture_pattern WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NCL.gesture-pattern.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		CD95AAEB22E1B07200B3908E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A5F400AA4F4D7D5BAFB10B6 /* Pods-gesture_pattern WatchKit App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXT8L37R34;
+				IBSC_MODULE = gesture_pattern_WatchKit_Extension;
+				INFOPLIST_FILE = "gesture_pattern WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "NCL.gesture-pattern.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		CD95AAEC22E1B07200B3908E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F42875553810BBCA54C06980 /* Pods-gesture_pattern WatchKit App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXT8L37R34;
+				IBSC_MODULE = gesture_pattern_WatchKit_Extension;
+				INFOPLIST_FILE = "gesture_pattern WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "NCL.gesture-pattern.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		CD95AAEF22E1B07200B3908E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8EDB2202E45A7065135C607 /* Pods-gesture_pattern.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXT8L37R34;
+				INFOPLIST_FILE = gesture_pattern/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NCL.gesture-pattern";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD95AAF022E1B07200B3908E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4267E0A6B6704C145DA3315 /* Pods-gesture_pattern.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXT8L37R34;
+				INFOPLIST_FILE = gesture_pattern/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NCL.gesture-pattern";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD95AAF222E1B07200B3908E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ADBF6D4755D159325F2F473 /* Pods-gesture_patternTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXT8L37R34;
+				INFOPLIST_FILE = gesture_patternTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NCL.gesture-patternTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gesture_pattern.app/gesture_pattern";
+			};
+			name = Debug;
+		};
+		CD95AAF322E1B07200B3908E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC5538C81D12094406817F4 /* Pods-gesture_patternTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXT8L37R34;
+				INFOPLIST_FILE = gesture_patternTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NCL.gesture-patternTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gesture_pattern.app/gesture_pattern";
+			};
+			name = Release;
+		};
+		CD95AAF522E1B07200B3908E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 449F8C510B3F28C588260CB8 /* Pods-gesture_patternUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXT8L37R34;
+				INFOPLIST_FILE = gesture_patternUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NCL.gesture-patternUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gesture_pattern;
+			};
+			name = Debug;
+		};
+		CD95AAF622E1B07200B3908E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5601796BA2C5BEB6E9BF2553 /* Pods-gesture_patternUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXT8L37R34;
+				INFOPLIST_FILE = gesture_patternUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NCL.gesture-patternUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gesture_pattern;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD95AA9922E1B07100B3908E /* Build configuration list for PBXProject "gesture_pattern" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD95AAE422E1B07200B3908E /* Debug */,
+				CD95AAE522E1B07200B3908E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD95AAE622E1B07200B3908E /* Build configuration list for PBXNativeTarget "gesture_pattern WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD95AAE722E1B07200B3908E /* Debug */,
+				CD95AAE822E1B07200B3908E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD95AAEA22E1B07200B3908E /* Build configuration list for PBXNativeTarget "gesture_pattern WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD95AAEB22E1B07200B3908E /* Debug */,
+				CD95AAEC22E1B07200B3908E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD95AAEE22E1B07200B3908E /* Build configuration list for PBXNativeTarget "gesture_pattern" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD95AAEF22E1B07200B3908E /* Debug */,
+				CD95AAF022E1B07200B3908E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD95AAF122E1B07200B3908E /* Build configuration list for PBXNativeTarget "gesture_patternTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD95AAF222E1B07200B3908E /* Debug */,
+				CD95AAF322E1B07200B3908E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD95AAF422E1B07200B3908E /* Build configuration list for PBXNativeTarget "gesture_patternUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD95AAF522E1B07200B3908E /* Debug */,
+				CD95AAF622E1B07200B3908E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD95AA9622E1B07100B3908E /* Project object */;
+}

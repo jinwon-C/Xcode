@@ -1,0 +1,6 @@
+framework module Pods_gesture_pattern_WatchKit_App {
+  umbrella header "Pods-gesture_pattern WatchKit App-umbrella.h"
+
+  export *
+  module * { export * }
+}

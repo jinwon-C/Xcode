@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2AL-lS-Dbr">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--PTdataCollect-->
+        <scene sceneID="Mbt-S6-JKQ">
+            <objects>
+                <controller identifier="PTdataCollect" id="2AL-lS-Dbr" customClass="PTsensorInterfaceController" customModule="gesture_pattern_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="1" id="JYb-TF-YHb">
+                            <connections>
+                                <action selector="pt1" destination="2AL-lS-Dbr" id="Eem-oO-ZP6"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="2" id="bjO-9x-ZbI">
+                            <connections>
+                                <action selector="pt2" destination="2AL-lS-Dbr" id="6pR-18-1LS"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="3" id="rOw-q4-WeB">
+                            <connections>
+                                <action selector="pt3" destination="2AL-lS-Dbr" id="LXq-GM-Phn"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="4" id="1mT-cO-kfb">
+                            <connections>
+                                <action selector="pt4" destination="2AL-lS-Dbr" id="5jW-8l-f8Q"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="5" id="8eB-Dv-P4z">
+                            <connections>
+                                <action selector="pt5" destination="2AL-lS-Dbr" id="wKe-10-nCU"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="6" id="gHe-bT-Jl9">
+                            <connections>
+                                <action selector="pt6" destination="2AL-lS-Dbr" id="eE1-hv-PhJ"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="7" id="aWj-eT-Bs7">
+                            <connections>
+                                <action selector="pt7" destination="2AL-lS-Dbr" id="yTD-9O-XxJ"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="8" id="4w1-RB-1Nz">
+                            <connections>
+                                <action selector="pt8" destination="2AL-lS-Dbr" id="3py-gk-jra"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="9" id="2zS-dz-p0v">
+                            <connections>
+                                <action selector="pt9" destination="2AL-lS-Dbr" id="ZSi-U5-tyh"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="10" id="WHm-NR-rzD">
+                            <connections>
+                                <action selector="pt10" destination="2AL-lS-Dbr" id="pJk-JI-tzg"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-25" y="285"/>
+        </scene>
+        <!--PTsensing-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="PTsensing" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="gesture_pattern_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Start" id="h2y-E0-edd">
+                            <connections>
+                                <action selector="sensingStart" destination="AgC-eL-Hgc" id="CgR-ei-aKH"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Disconnect" id="MYq-VI-PrZ">
+                            <connections>
+                                <action selector="DisconnectBtn" destination="AgC-eL-Hgc" id="5Zn-ah-L0i"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="error" id="2UV-Em-ecP"/>
+                        <label alignment="left" text="Label" id="4vR-8x-K8z"/>
+                    </items>
+                    <connections>
+                        <outlet property="error" destination="4vR-8x-K8z" id="FWy-PU-FMg"/>
+                        <outlet property="startBtn" destination="h2y-E0-edd" id="zeG-9u-McQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="280" y="291"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="gesture_pattern_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
