@@ -12,6 +12,8 @@ import CoreMotion
 import WatchConnectivity
 import HealthKit
 
+import AVFoundation
+
 class ViewController: UIViewController, WCSessionDelegate {
     
     public func sessionDidBecomeInactive(_ session: WCSession) {
@@ -50,10 +52,27 @@ class ViewController: UIViewController, WCSessionDelegate {
     var Index: String = ""  // Index 구별
     var Index3: String = "" // Index 구별
     
+    var engine : AVAudioEngine!
+    var tone : AVTonePlayerUnit!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         client = TCPClient(address: host, port: Int32(port))
+        
+        tone = AVTonePlayerUnit()
+        tone.frequency = 440
+        let format = AVAudioFormat(standardFormatWithSampleRate: tone.sampleRate, channels: 1)
+        print(format?.sampleRate ?? "format nil")
+        engine = AVAudioEngine()
+        engine.attach(tone)
+        let mixer = engine.mainMixerNode
+        engine.connect(tone, to:mixer, format : format)
+        do{
+            try engine.start()
+        } catch let error as NSError{
+            print(error)
+        }
     }
     
     private func sendRequest(string: String, using client: TCPClient) -> String? {
@@ -149,17 +168,9 @@ class ViewController: UIViewController, WCSessionDelegate {
     //========================================================================================================
     //아이폰 버튼
     @IBAction func btnconnect(_ sender: UIButton) {
-        if flag == 0{
-            btn_Name()
-            server_connect()
-            
-        }
-        else if flag == 1{
-            
-            btn_Name()
-            server_connect()
-            
-        }
+        btn_Name()
+        server_connect()
+        toneGenerate()
         
     }
     func btn_Name(){
@@ -242,5 +253,18 @@ class ViewController: UIViewController, WCSessionDelegate {
     func activeTimer(){
         //순서 : 식별자, watch 가속도 x,y,z, iPhone 자이로 x,y,z, iPhone 가속도 x,y,z
         sendRequest(string: Index+","+data1+","+X_1.text!+","+Y_1.text!+","+Z_1.text!+","+X_2.text!+","+Y_2.text!+","+Z_2.text!+"\n", using: client!)
+    }
+    
+    func toneGenerate(){
+        if tone.isPlaying{
+            engine.mainMixerNode.volume = 0.0
+            tone.stop()
+            engine.reset()
+        }
+        else {
+            tone.preparePlaying()
+            tone.play()
+            engine.mainMixerNode.volume = 1.0
+        }
     }
 }

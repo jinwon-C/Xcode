@@ -27,6 +27,7 @@
 		CD95AADD22E1B07200B3908E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AADC22E1B07200B3908E /* ExtensionDelegate.swift */; };
 		CD95AADF22E1B07200B3908E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AADE22E1B07200B3908E /* NotificationController.swift */; };
 		CD95AAE122E1B07200B3908E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD95AAE022E1B07200B3908E /* Assets.xcassets */; };
+		CDA143B622F17AB30068903E /* AVTonePlayerUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA143B522F17AB20068903E /* AVTonePlayerUnit.swift */; };
 		CDBB5D6122E55C9A0088240D /* PTsensorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBB5D6022E55C9A0088240D /* PTsensorInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,7 @@
 		CD95AAE022E1B07200B3908E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD95AAE222E1B07200B3908E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD95AAE322E1B07200B3908E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		CDA143B522F17AB20068903E /* AVTonePlayerUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVTonePlayerUnit.swift; sourceTree = "<group>"; };
 		CDBB5D6022E55C9A0088240D /* PTsensorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTsensorInterfaceController.swift; sourceTree = "<group>"; };
 		CDBB5D6222E55FD80088240D /* ptDraw WatchKit Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ptDraw WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		E32441F7B864E61AE6DEA0A8 /* Pods-gesture_pattern WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-gesture_pattern WatchKit Extension/Pods-gesture_pattern WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				CD95AAA122E1B07100B3908E /* AppDelegate.swift */,
+				CDA143B522F17AB20068903E /* AVTonePlayerUnit.swift */,
 				CD95AAA322E1B07100B3908E /* ViewController.swift */,
 				CD95AAA522E1B07100B3908E /* Main.storyboard */,
 				CD95AAA822E1B07100B3908E /* Assets.xcassets */,
@@ -625,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA143B622F17AB30068903E /* AVTonePlayerUnit.swift in Sources */,
 				CD95AAA422E1B07100B3908E /* ViewController.swift in Sources */,
 				CD95AAA222E1B07100B3908E /* AppDelegate.swift in Sources */,
 			);
