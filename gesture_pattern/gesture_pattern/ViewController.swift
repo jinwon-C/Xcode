@@ -14,7 +14,7 @@ import HealthKit
 
 import AVFoundation
 
-class ViewController: UIViewController, WCSessionDelegate {
+class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelegate {
     
     public func sessionDidBecomeInactive(_ session: WCSession) {
         print ("error in sessionDidBecomeInactive")
@@ -54,6 +54,9 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     var engine : AVAudioEngine!
     var tone : AVTonePlayerUnit!
+
+    var recordingSession : AVAudioSession!
+    var audioRecorder : AVAudioRecorder!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,11 +171,21 @@ class ViewController: UIViewController, WCSessionDelegate {
     //========================================================================================================
     //아이폰 버튼
     @IBAction func btnconnect(_ sender: UIButton) {
-        btn_Name()
-        server_connect()
-        toneGenerate()
-        
+        if flag == 0 {
+            btn_Name()
+            server_connect()
+            toneGenerate()
+            print(getDocumentsDirectory())
+            startRecording()
+        }
+        else{
+            btn_Name()
+            server_connect()
+            toneGenerate()
+            finishRecording(success: true)
+        }
     }
+    
     func btn_Name(){
         if flag == 0{
             connect_btn.setTitle("Disconnect", for: .normal)
@@ -267,4 +280,34 @@ class ViewController: UIViewController, WCSessionDelegate {
             engine.mainMixerNode.volume = 1.0
         }
     }
+    
+    func startRecording(){
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("pathfinding.m4a")
+        let settings = [
+            AVFormatIDKey : Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey : 12000,
+            AVNumberOfChannelsKey : 1,
+            AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
+        ]
+        
+        do{
+            audioRecorder = try AVAudioRecorder(url:audioFilename, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.record()
+        } catch{
+            finishRecording(success : false)
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL{
+        let paths = FileManager.default.urls(for:.documentDirectory, in : .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    func finishRecording(success:Bool){
+        audioRecorder.stop()
+        audioRecorder = nil
+    }
 }
+
