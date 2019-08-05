@@ -79,7 +79,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate {
             AVFormatIDKey : Int(kAudioFormatLinearPCM),
             AVSampleRateKey : 44100,
             AVNumberOfChannelsKey : 1,
-            AVLinearPCMBitDepthKey : 32,
+            AVLinearPCMBitDepthKey : 16,
             AVLinearPCMIsFloatKey : false,
             AVLinearPCMIsBigEndianKey : false,
             AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue

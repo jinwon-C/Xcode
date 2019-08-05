@@ -40,6 +40,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     var motion = CMMotionManager()
     let host = "192.168.0.137"
     let port = 30330
+    let freq = 20000.0    //hertz
     var client: TCPClient?
     var num:Int = 1
     var flag : Int = 0  //connect 버튼 flag
@@ -57,14 +58,18 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
 
     var recordingSession : AVAudioSession!
     var audioRecorder : AVAudioRecorder!
+    let audioSession = AVAudioSession.sharedInstance()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         client = TCPClient(address: host, port: Int32(port))
         
         tone = AVTonePlayerUnit()
-        tone.frequency = 440
+        try! audioSession.setCategory(AVAudioSession.Category.multiRoute)
+        try! audioSession.setActive(true)
+        tone.frequency = freq
         let format = AVAudioFormat(standardFormatWithSampleRate: tone.sampleRate, channels: 1)
         print(format?.sampleRate ?? "format nil")
         engine = AVAudioEngine()
@@ -173,18 +178,34 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     @IBAction func btnconnect(_ sender: UIButton) {
         if flag == 0 {
             btn_Name()
-            server_connect()
+            //server_connect()
             toneGenerate()
-            print(getDocumentsDirectory())
             startRecording()
         }
         else{
             btn_Name()
-            server_connect()
-            toneGenerate()
+            //server_connect()
             finishRecording(success: true)
+            toneGenerate()
         }
     }
+    
+    @IBAction func btn_play(_ sender : UIButton){
+        toneGenerate()
+    }
+    
+    @IBAction func btn_stop(_ sender : UIButton){
+        toneGenerate()
+    }
+    
+    @IBAction func btn_REC(_ sender : UIButton){
+        startRecording()
+    }
+    
+    @IBAction func btn_finish(_ sender : UIButton){
+        finishRecording(success: true)
+    }
+    
     
     func btn_Name(){
         if flag == 0{
@@ -282,14 +303,26 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     }
     
     func startRecording(){
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("pathfinding.m4a")
-        let settings = [
-            AVFormatIDKey : Int(kAudioFormatMPEG4AAC),
-            AVSampleRateKey : 12000,
-            AVNumberOfChannelsKey : 1,
-            AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
-        ]
+//        let audioSession = AVAudioSession.sharedInstance()
+//        try! audioSession.setCategory(AVAudioSession.Category.playAndRecord)
+//        try! audioSession.setActive(true)
+        audioSession.requestRecordPermission({(allowed: Bool) -> Void in print("Accepted")} )
+//
+        let currentTime = NSDate()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let time = format.string(from: currentTime as Date)
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(time+".wav")
         
+        let settings = [
+            AVFormatIDKey : Int(kAudioFormatLinearPCM),
+            AVSampleRateKey : 44100,
+            AVNumberOfChannelsKey : 1,
+            AVLinearPCMBitDepthKey : 16,
+            AVLinearPCMIsFloatKey : false,
+            AVLinearPCMIsBigEndianKey : false,
+            AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
+            ] as [String : Any]
         do{
             audioRecorder = try AVAudioRecorder(url:audioFilename, settings: settings)
             audioRecorder.delegate = self
