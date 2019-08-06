@@ -178,15 +178,15 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     @IBAction func btnconnect(_ sender: UIButton) {
         if flag == 0 {
             btn_Name()
-            //server_connect()
-            toneGenerate()
-            startRecording()
+            server_connect()
+            //toneGenerate()
+            //startRecording()
         }
         else{
             btn_Name()
-            //server_connect()
-            finishRecording(success: true)
-            toneGenerate()
+            server_connect()
+            //finishRecording(success: true)
+            //toneGenerate()
         }
     }
     
@@ -310,7 +310,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
 //
         let currentTime = NSDate()
         let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        format.dateFormat = "yyyy-MM-dd_HH:mm:ss"
         let time = format.string(from: currentTime as Date)
         let audioFilename = getDocumentsDirectory().appendingPathComponent(time+".wav")
         
