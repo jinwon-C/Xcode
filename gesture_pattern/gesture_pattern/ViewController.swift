@@ -36,11 +36,16 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     @IBOutlet weak var Z_2: UILabel!
     @IBOutlet weak var connect_btn: UIButton!
     @IBOutlet weak var start_btn: UIButton!
+    @IBOutlet weak var btnFreqPlay: UIButton!
+    @IBOutlet weak var btnFreqStop: UIButton!
+    @IBOutlet weak var btnRecordStart: UIButton!
+    @IBOutlet weak var btnRecordFinish: UIButton!
+    
     
     var motion = CMMotionManager()
     let host = "192.168.0.137"
     let port = 30330
-    let freq = 20000.0    //hertz
+    let freq: Double = 20000    //hertz
     var client: TCPClient?
     var num:Int = 1
     var flag : Int = 0  //connect 버튼 flag
@@ -64,6 +69,10 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        btnFreqStop.isEnabled = false
+        btnRecordFinish.isEnabled = false
+
         client = TCPClient(address: host, port: Int32(port))
         
         tone = AVTonePlayerUnit()
@@ -98,7 +107,6 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     
     private func appendToTextField(string: String) {
         print(string)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -112,14 +120,14 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         motion.startAccelerometerUpdates(to: OperationQueue.current!){(accelerometerData: CMAccelerometerData?, NSError) -> Void in
             self.outputAccelerationData(acceleration: accelerometerData!.acceleration)
             if(NSError != nil){
-                print("\(NSError)")
+                print("\(String(describing: NSError))")
             }
             
         }
         motion.startGyroUpdates(to: OperationQueue.current!,withHandler: { (gyroData:CMGyroData?, NSError) -> Void in
             self.outputGyroData(rotation: gyroData!.rotationRate)
             if(NSError != nil){
-                print("\(NSError)")
+                print("\(String(describing: NSError))")
             }
         })
         
@@ -128,7 +136,6 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
             self.session.delegate = self
             self.session.activate()
         }
-        
     }
     
     func outputAccelerationData(acceleration: CMAcceleration){
@@ -141,7 +148,6 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         Y_1.text = "\(rotation.y)"
         Z_1.text = "\(rotation.z)"
     }
-    
     //watch에서 아이폰으로 받은 데이터
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
@@ -168,25 +174,21 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         
         if signal == "5"{
             
-            sendRequest(string: Index+","+Index3+","+X_1.text!+","+Y_1.text!+","+Z_1.text!+","+X_2.text!+","+Y_2.text!+","+Z_2.text!+"\n", using: client!)
+            sendRequest(string: Index+","+Index3+","+X_1.text!+","+Y_1.text!+","+Z_1.text!+","+X_2.text!+","+Y_2.text!+","+Z_2.text!+","+timeUpdate()+"\n", using: client!)
         }
     }
     
-    
-    //========================================================================================================
     //아이폰 버튼
     @IBAction func btnconnect(_ sender: UIButton) {
         if flag == 0 {
             btn_Name()
             server_connect()
-            //toneGenerate()
-            //startRecording()
+            startRecording()
         }
         else{
             btn_Name()
             server_connect()
-            //finishRecording(success: true)
-            //toneGenerate()
+            finishRecording(success: true)
         }
     }
     
@@ -206,11 +208,40 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         finishRecording(success: true)
     }
     
+    @IBAction func btnsend(_ sender: UIButton) {
+        if flag1 == 0{
+            btn_Name1()
+            timerStart()
+        }
+        else if flag1 == 1{
+            btn_Name1()
+            timerStart()
+        }
+    }
+    
+    func btn_Name1(){
+        if flag1 == 0{
+            start_btn.setTitle("Stop", for: .normal)
+        }
+        else{
+            start_btn.setTitle("Start", for: .normal)
+        }
+    }
+    
+    func timerStart(){
+        if flag1 == 0{
+            timer = Timer.scheduledTimer(timeInterval: 0.1,target: self,selector: Selector("activeTimer"),userInfo: nil, repeats: true)
+            flag1 = 1
+        }
+        else{
+            timer.invalidate()
+            flag1 = 0
+        }
+    }
     
     func btn_Name(){
         if flag == 0{
             connect_btn.setTitle("Disconnect", for: .normal)
-            
         }
         else{
             connect_btn.setTitle("Connect", for: .normal)
@@ -218,7 +249,6 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     }
     
     func server_connect(){
-        
         if flag == 0{
             print("flag")
             guard let client = client else {return}
@@ -237,52 +267,8 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
             client?.close()
             flag = 0
         }
-        
         return
     }
-    
-    @IBAction func btnsend(_ sender: UIButton) {
-        
-        if flag1 == 0{
-            
-            btn_Name1()
-            timerStart()
-        }
-            
-        else if flag1 == 1{
-            
-            btn_Name1()
-            timerStart()
-        }
-    }
-    
-    func btn_Name1(){
-        
-        if flag1 == 0{
-            start_btn.setTitle("Stop", for: .normal)
-        }
-            
-        else{
-            start_btn.setTitle("Start", for: .normal)
-        }
-    }
-    
-    func timerStart(){
-        
-        if flag1 == 0{
-            
-            timer = Timer.scheduledTimer(timeInterval: 0.1,target: self,selector: Selector("activeTimer"),userInfo: nil, repeats: true)
-            flag1 = 1
-        }
-            
-        else{
-            
-            timer.invalidate()
-            flag1 = 0
-        }
-    }
-    
-    //========================================================================================================
     
     func activeTimer(){
         //순서 : 식별자, watch 가속도 x,y,z, iPhone 자이로 x,y,z, iPhone 가속도 x,y,z
@@ -294,8 +280,16 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
             engine.mainMixerNode.volume = 0.0
             tone.stop()
             engine.reset()
+            
+            btnFreqPlay.isEnabled = true
+            btnFreqStop.isEnabled = false
+            btnFreqPlay.setTitle("Play", for: .normal)
         }
         else {
+            btnFreqPlay.isEnabled = false
+            btnFreqStop.isEnabled = true
+            btnFreqPlay.setTitle("Now Playing", for: .normal)
+            
             tone.preparePlaying()
             tone.play()
             engine.mainMixerNode.volume = 1.0
@@ -303,17 +297,8 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     }
     
     func startRecording(){
-//        let audioSession = AVAudioSession.sharedInstance()
-//        try! audioSession.setCategory(AVAudioSession.Category.playAndRecord)
-//        try! audioSession.setActive(true)
         audioSession.requestRecordPermission({(allowed: Bool) -> Void in print("Accepted")} )
-//
-        let currentTime = NSDate()
-        let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd_HH:mm:ss"
-        let time = format.string(from: currentTime as Date)
-        let audioFilename = getDocumentsDirectory().appendingPathComponent(time+".wav")
-        
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(timeUpdate()+".wav")
         let settings = [
             AVFormatIDKey : Int(kAudioFormatLinearPCM),
             AVSampleRateKey : 44100,
@@ -324,15 +309,20 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
             AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
             ] as [String : Any]
         do{
+            btnRecordFinish.isEnabled = true
+            btnRecordStart.isEnabled = false
+            btnRecordStart.setTitle("Now Recording", for: .normal)
+            
             audioRecorder = try AVAudioRecorder(url:audioFilename, settings: settings)
             audioRecorder.delegate = self
+            print("Recording Start : "+timeUpdate())
             audioRecorder.record()
         } catch{
             finishRecording(success : false)
         }
     }
     
-    func getDocumentsDirectory() -> URL{
+    func getDocumentsDirectory() -> URL{    //녹음 파일 경로 설정 함수
         let paths = FileManager.default.urls(for:.documentDirectory, in : .userDomainMask)
         let documentsDirectory = paths[0]
         return documentsDirectory
@@ -341,6 +331,19 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     func finishRecording(success:Bool){
         audioRecorder.stop()
         audioRecorder = nil
+        print("Recording Finish : "+timeUpdate())
+        
+        btnRecordStart.isEnabled = true
+        btnRecordFinish.isEnabled = false
+        btnRecordStart.setTitle("REC", for: .normal)
+    }
+    
+    func timeUpdate() -> String{
+        let currentTime = NSDate()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        let time = format.string(from: currentTime as Date)
+        return time
     }
 }
 

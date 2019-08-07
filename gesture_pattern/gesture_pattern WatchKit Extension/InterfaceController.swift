@@ -85,7 +85,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             else{
                 
                 let format = DateFormatter()
-                format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSS"
+                format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
                 let currentTime = NSDate()
                 let curTime = format.string(from: currentTime as Date)
                 
@@ -96,7 +96,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                 }
                 self.error.setText("Sensing")
                 
-                print("\(self.start)"+"\(self.status)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)")
+                //print("\(self.start)"+"\(self.status)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)")
             }
         }
         

@@ -136,7 +136,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmC-jC-nE4">
-                                <rect key="frame" x="86" y="494" width="30" height="30"/>
+                                <rect key="frame" x="31" y="494" width="139" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
@@ -144,7 +144,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKt-u7-GfO">
-                                <rect key="frame" x="257" y="494" width="32" height="30"/>
+                                <rect key="frame" x="188" y="494" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Stop"/>
                                 <connections>
@@ -152,7 +152,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3x4-Jp-I81">
-                                <rect key="frame" x="86" y="572" width="30" height="30"/>
+                                <rect key="frame" x="31" y="572" width="139" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="REC"/>
                                 <connections>
@@ -160,7 +160,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5e-94-W5y">
-                                <rect key="frame" x="253" y="572" width="41" height="30"/>
+                                <rect key="frame" x="188" y="572" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
@@ -177,6 +177,10 @@
                         <outlet property="Y_2" destination="6Pi-lg-2Nh" id="SoJ-8r-fLZ"/>
                         <outlet property="Z_1" destination="ntA-QH-4bO" id="xiP-JQ-Cvi"/>
                         <outlet property="Z_2" destination="ZPI-BR-SZr" id="Hch-Sa-seK"/>
+                        <outlet property="btnFreqPlay" destination="EmC-jC-nE4" id="7Ms-Do-d1f"/>
+                        <outlet property="btnFreqStop" destination="bKt-u7-GfO" id="9gN-or-cdh"/>
+                        <outlet property="btnRecordFinish" destination="H5e-94-W5y" id="0Ww-2k-lS0"/>
+                        <outlet property="btnRecordStart" destination="3x4-Jp-I81" id="JXI-lg-gyL"/>
                         <outlet property="connect_btn" destination="kWg-Sc-5Ds" id="15a-Hr-rZ4"/>
                         <outlet property="start_btn" destination="8Uc-Ks-p3M" id="JPs-Yh-cvO"/>
                     </connections>

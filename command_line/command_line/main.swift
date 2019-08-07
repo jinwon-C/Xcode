@@ -9,7 +9,7 @@
 import Foundation
 
 let format = DateFormatter()
-format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSS"
+format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
 let currentTime = NSDate()
 let curTime = format.string(from: currentTime as Date)
 
