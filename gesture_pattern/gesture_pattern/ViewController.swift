@@ -11,7 +11,6 @@ import SwiftSocket
 import CoreMotion
 import WatchConnectivity
 import HealthKit
-
 import AVFoundation
 
 class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelegate {
@@ -298,6 +297,8 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     
     func startRecording(){
         audioSession.requestRecordPermission({(allowed: Bool) -> Void in print("Accepted")} )
+        //make directory
+        
         let audioFilename = getDocumentsDirectory().appendingPathComponent(timeUpdate()+".wav")
         let settings = [
             AVFormatIDKey : Int(kAudioFormatLinearPCM),
@@ -323,9 +324,21 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     }
     
     func getDocumentsDirectory() -> URL{    //녹음 파일 경로 설정 함수
-        let paths = FileManager.default.urls(for:.documentDirectory, in : .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
+//        let paths = FileManager.default.urls(for:.documentDirectory, in : .userDomainMask)
+//        let documentsDirectory = paths[0]
+//        return documentsDirectory
+        let path = FileManager.default.urls(for:.documentDirectory, in : .userDomainMask).first
+        let filePath = path?.appendingPathComponent("\(Index)")
+        print(filePath)
+        if !FileManager.default.fileExists(atPath: filePath!.path){
+            do{
+                try FileManager.default.createDirectory(atPath: filePath!.path, withIntermediateDirectories: true, attributes: nil)
+            }
+            catch{
+                print("failed to make directory")
+            }
+        }
+        return filePath!
     }
     
     func finishRecording(success:Bool){
