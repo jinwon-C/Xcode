@@ -45,7 +45,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             print("\(status)")
         }
         // Configure interface objects here.
-        
     }
     
     override func willActivate() {
@@ -57,65 +56,53 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             self.session.delegate = self
             self.session.activate()
         }
-        
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-        
-        
     }
     
     override init() {
         super.init()
-        
     }
-    
     
     @IBOutlet var startBtn: WKInterfaceButton!
     
     @IBAction func sensingStart() {// 휴대폰으로 애플워치의 상태값과 가속도 값을 서버로 전달.
-        motion.accelerometerUpdateInterval = 0.1
-        motion.startAccelerometerUpdates(to: OperationQueue.current!){(accelerometerData:CMAccelerometerData?, NSError) -> Void in
-            self.outputAccelerationData(acceleration: accelerometerData!.acceleration)
-            if(NSError != nil){
-                self.error.setText("\(NSError)")
-            }
-            else{
-                
-                let format = DateFormatter()
-                format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-                let currentTime = NSDate()
-                let curTime = format.string(from: currentTime as Date)
-                
-                self.start = "5"
-                if WCSession.isSupported(){
-                    
-                    self.session.sendMessage(["b":"\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)"], replyHandler: nil, errorHandler: nil)
-                }
-                self.error.setText("Sensing")
-                
-                //print("\(self.start)"+"\(self.status)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)")
-            }
-        }
-        
         if flag == 0{
-            
             startBtn.setTitle("Stop")
             flag = 1
             
+            motion.accelerometerUpdateInterval = 0.1
+            motion.startAccelerometerUpdates(to: OperationQueue.current!){(accelerometerData:CMAccelerometerData?, NSError) -> Void in
+                self.outputAccelerationData(acceleration: accelerometerData!.acceleration)
+                if(NSError != nil){
+                    self.error.setText("\(NSError)")
+                }
+                else{
+                    
+                    let format = DateFormatter()
+                    format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+                    let currentTime = NSDate()
+                    let curTime = format.string(from: currentTime as Date)
+                    
+                    self.start = "5"
+                    if WCSession.isSupported(){
+                        self.session.sendMessage(["b":"\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)"], replyHandler: nil, errorHandler: nil)
+                    }
+                    self.error.setText("Sensing")
+                    print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)")
+                }
+            }
         }
-            
         else{
-            
             startBtn.setTitle("Start")
             flag = 0
             start = "4"
             motion.stopAccelerometerUpdates()
             error.setText("Stop")
         }
-
     }
     
     func outputAccelerationData(acceleration: CMAcceleration){
@@ -128,11 +115,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         motion.stopAccelerometerUpdates()
         if WCSession.isSupported(){
             session.sendMessage(["b":"Disconnect"], replyHandler: nil, errorHandler: nil )
-            
         }
         startBtn.setTitle("Start")
         print("disconnect")
         error.setText("Disconnect")
     }
-
 }
