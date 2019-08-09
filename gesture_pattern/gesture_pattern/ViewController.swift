@@ -173,7 +173,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         
         if signal == "5"{
             
-            sendRequest(string: Index+","+Index3+","+X_1.text!+","+Y_1.text!+","+Z_1.text!+","+X_2.text!+","+Y_2.text!+","+Z_2.text!+","+timeUpdate()+"\n", using: client!)
+            sendRequest(string: Index+","+Index3+","+X_1.text!+","+Y_1.text!+","+Z_1.text!+","+X_2.text!+","+Y_2.text!+","+Z_2.text!+"\n", using: client!)
         }
     }
     
@@ -299,7 +299,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         audioSession.requestRecordPermission({(allowed: Bool) -> Void in print("Accepted")} )
         //make directory
         
-        let audioFilename = getDocumentsDirectory().appendingPathComponent(timeUpdate()+".wav")
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(timeStamp()+".wav")
         let settings = [
             AVFormatIDKey : Int(kAudioFormatLinearPCM),
             AVSampleRateKey : 44100,
@@ -316,7 +316,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
             
             audioRecorder = try AVAudioRecorder(url:audioFilename, settings: settings)
             audioRecorder.delegate = self
-            print("Recording Start : "+timeUpdate())
+            print("Recording Start : "+timeStamp())
             audioRecorder.record()
         } catch{
             finishRecording(success : false)
@@ -344,14 +344,14 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     func finishRecording(success:Bool){
         audioRecorder.stop()
         audioRecorder = nil
-        print("Recording Finish : "+timeUpdate())
+        print("Recording Finish : "+timeStamp())
         
         btnRecordStart.isEnabled = true
         btnRecordFinish.isEnabled = false
         btnRecordStart.setTitle("REC", for: .normal)
     }
     
-    func timeUpdate() -> String{
+    func timeStamp() -> String{
         let currentTime = NSDate()
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"

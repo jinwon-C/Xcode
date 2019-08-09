@@ -96,7 +96,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                 }
                 self.error.setText("Sensing")
                 
-                print("\(self.start)"+"\(self.status)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)")
+                //print("\(self.start)"+"\(self.status)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)")
             }
         }
         

@@ -66,16 +66,27 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       notificationPayloadFile = "gesture_pattern WatchKit Extension/PushNotificationPayload.apns">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/gesture_pattern WatchKit App">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD95AA9D22E1B07100B3908E"
-            BuildableName = "gesture_pattern.app"
-            BlueprintName = "gesture_pattern"
+            BlueprintIdentifier = "CD95AAC522E1B07100B3908E"
+            BuildableName = "gesture_pattern WatchKit App.app"
+            BlueprintName = "gesture_pattern WatchKit App"
             ReferencedContainer = "container:gesture_pattern.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CD95AAC522E1B07100B3908E"
+            BuildableName = "gesture_pattern WatchKit App.app"
+            BlueprintName = "gesture_pattern WatchKit App"
+            ReferencedContainer = "container:gesture_pattern.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
