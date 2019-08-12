@@ -181,13 +181,13 @@
                         <outlet property="Y_2" destination="6Pi-lg-2Nh" id="SoJ-8r-fLZ"/>
                         <outlet property="Z_1" destination="ntA-QH-4bO" id="xiP-JQ-Cvi"/>
                         <outlet property="Z_2" destination="ZPI-BR-SZr" id="Hch-Sa-seK"/>
+                        <outlet property="btnConnect" destination="kWg-Sc-5Ds" id="15a-Hr-rZ4"/>
                         <outlet property="btnFreqPlay" destination="EmC-jC-nE4" id="7Ms-Do-d1f"/>
                         <outlet property="btnFreqStop" destination="bKt-u7-GfO" id="9gN-or-cdh"/>
                         <outlet property="btnRecordFinish" destination="H5e-94-W5y" id="0Ww-2k-lS0"/>
                         <outlet property="btnRecordStart" destination="3x4-Jp-I81" id="JXI-lg-gyL"/>
-                        <outlet property="connect_btn" destination="kWg-Sc-5Ds" id="15a-Hr-rZ4"/>
+                        <outlet property="btnStart" destination="8Uc-Ks-p3M" id="JPs-Yh-cvO"/>
                         <outlet property="plate" destination="wjh-RX-rfW" id="D03-by-NuM"/>
-                        <outlet property="start_btn" destination="8Uc-Ks-p3M" id="JPs-Yh-cvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

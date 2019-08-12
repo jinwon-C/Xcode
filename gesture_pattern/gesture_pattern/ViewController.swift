@@ -34,8 +34,8 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     @IBOutlet weak var X_2: UILabel!
     @IBOutlet weak var Y_2: UILabel!
     @IBOutlet weak var Z_2: UILabel!
-    @IBOutlet weak var connect_btn: UIButton!
-    @IBOutlet weak var start_btn: UIButton!
+    @IBOutlet weak var btnConnect: UIButton!
+    @IBOutlet weak var btnStart: UIButton!
     @IBOutlet weak var btnFreqPlay: UIButton!
     @IBOutlet weak var btnFreqStop: UIButton!
     @IBOutlet weak var btnRecordStart: UIButton!
@@ -75,7 +75,8 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         
         btnFreqStop.isEnabled = false
         btnRecordFinish.isEnabled = false
-
+        btnConnect.isEnabled = false
+        
         client = TCPClient(address: host, port: Int32(port))
         
         tone = AVTonePlayerUnit()
@@ -164,14 +165,14 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         
         if data == "Connect"{
             flag = 0
-            connect_btn.setTitle("Disconncet", for: .normal)
+            btnConnect.setTitle("Disconncet", for: .normal)
             server_connect()
             
         }
             
         else if data == "Disconnect"{
             flag = 1
-            connect_btn.setTitle("Connect", for: .normal)
+            btnConnect.setTitle("Connect", for: .normal)
             server_connect()
         }
         
@@ -226,10 +227,10 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     
     func btn_Name1(){
         if flag1 == 0{
-            start_btn.setTitle("Stop", for: .normal)
+            btnStart.setTitle("Stop", for: .normal)
         }
         else{
-            start_btn.setTitle("Start", for: .normal)
+            btnStart.setTitle("Start", for: .normal)
         }
     }
     
@@ -246,10 +247,10 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     
     func btn_Name(){
         if flag == 0{
-            connect_btn.setTitle("Disconnect", for: .normal)
+            btnConnect.setTitle("Disconnect", for: .normal)
         }
         else{
-            connect_btn.setTitle("Connect", for: .normal)
+            btnConnect.setTitle("Connect", for: .normal)
         }
     }
     
@@ -289,11 +290,13 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
             
             btnFreqPlay.isEnabled = true
             btnFreqStop.isEnabled = false
+            btnConnect.isEnabled = false
             btnFreqPlay.setTitle("Play", for: .normal)
         }
         else {
             btnFreqPlay.isEnabled = false
             btnFreqStop.isEnabled = true
+            btnConnect.isEnabled = true
             btnFreqPlay.setTitle("Now Playing", for: .normal)
             
             tone.preparePlaying()
