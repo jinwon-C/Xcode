@@ -26,6 +26,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     }
     
     @IBOutlet weak var statusLbl: UILabel!
+    @IBOutlet weak var plate: UIImageView!
     
     @IBOutlet weak var X_1: UILabel!
     @IBOutlet weak var Y_1: UILabel!
@@ -56,6 +57,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     var signal: String = ""  // start signal 확인
     var Index: String = ""  // Index 구별
     var Index3: String = "" // Index 구별
+    var img : UIImage?
     
     var engine : AVAudioEngine!
     var tone : AVTonePlayerUnit!
@@ -68,6 +70,8 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        img = UIImage(named: "3x3Plate.png")
+        plate.image = img
         
         btnFreqStop.isEnabled = false
         btnRecordFinish.isEnabled = false

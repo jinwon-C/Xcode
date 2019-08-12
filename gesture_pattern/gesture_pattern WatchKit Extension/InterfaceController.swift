@@ -90,9 +90,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                     self.start = "5"
                     if WCSession.isSupported(){
                         self.session.sendMessage(["b":"\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)"], replyHandler: nil, errorHandler: nil)
+                        self.error.setText("Sensing")
+                        print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)")
                     }
-                    self.error.setText("Sensing")
-                    print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)")
+                    
                 }
             }
         }
