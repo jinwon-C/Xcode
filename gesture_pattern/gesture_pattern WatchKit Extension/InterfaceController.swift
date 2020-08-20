@@ -79,6 +79,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                 self.outputAccelerationData(acceleration: accelerometerData!.acceleration)
                 if(NSError != nil){
                     self.error.setText("\(NSError)")
+                    NSLog("test")
                 }
                 else{
                     
