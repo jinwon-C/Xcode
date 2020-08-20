@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "A61B02EE-2AA3-4E36-91E1-EFC6F05A9F34"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "CDC4D84F-178C-4F16-A0BA-7384CFDD5DD8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "gesture_pattern WatchKit Extension/InterfaceController.swift"
-            timestampString = "587293242.817415"
+            timestampString = "587297446.624759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
