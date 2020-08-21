@@ -97,12 +97,37 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                     
                 }
             }
+            
+            motion.gyroUpdateInterval = 0.1
+            motion.startGyroUpdates(to: OperationQueue.current!){(gyroData:CMGyroData?, NSError) -> Void in
+                self.outputGyroData(gyro: gyroData!.rotationRate)
+                if(NSError != nil){
+                    self.error.setText("\(NSError)")
+                    NSLog("test")
+                }
+                else{
+                    
+                    let format = DateFormatter()
+                    format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+                    let currentTime = NSDate()
+                    let curTime = format.string(from: currentTime as Date)
+                    
+                    self.start = "5"
+                    if WCSession.isSupported(){
+                        self.session.sendMessage(["g":"\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)"], replyHandler: nil, errorHandler: nil)
+                        self.error.setText("Sensing")
+                        print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)")
+                    }
+                    
+                }
+            }
         }
         else{
             startBtn.setTitle("Start")
             flag = 0
             start = "4"
             motion.stopAccelerometerUpdates()
+            motion.stopGyroUpdates()
             error.setText("Stop")
         }
     }
@@ -113,8 +138,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         accel_Z = String(acceleration.z)
     }
     
+    func outputGyroData(gyro: CMRotationRate){
+        gyro_X = String(gyro.x)
+        gyro_Y = String(gyro.y)
+        gyro_Z = String(gyro.z)
+    }
+    
     @IBAction func DisconnectBtn() {
         motion.stopAccelerometerUpdates()
+        motion.stopGyroUpdates()
         if WCSession.isSupported(){
             session.sendMessage(["b":"Disconnect"], replyHandler: nil, errorHandler: nil )
         }

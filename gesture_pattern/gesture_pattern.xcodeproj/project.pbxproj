@@ -12,6 +12,7 @@
 		4D3A375EB3772E2150C6970F /* Pods_gesture_pattern_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC96D04AFF8AFA2836F412B /* Pods_gesture_pattern_WatchKit_App.framework */; };
 		8A375CFC0A9AA7DEA2FE5448 /* Pods_gesture_pattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D02317F5F3E3F78CF15ED7B /* Pods_gesture_pattern.framework */; };
 		A3D52B878608EB7752810C9E /* Pods_gesture_patternTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138357838F913EE80B35FE5C /* Pods_gesture_patternTests.framework */; };
+		CD503A8124EE6C8300C1F248 /* SwiftSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD503A8024EE6C8300C1F248 /* SwiftSocket.framework */; };
 		CD95AAA222E1B07100B3908E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AAA122E1B07100B3908E /* AppDelegate.swift */; };
 		CD95AAA422E1B07100B3908E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95AAA322E1B07100B3908E /* ViewController.swift */; };
 		CD95AAA722E1B07100B3908E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD95AAA522E1B07100B3908E /* Main.storyboard */; };
@@ -111,6 +112,7 @@
 		7D02317F5F3E3F78CF15ED7B /* Pods_gesture_pattern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gesture_pattern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB602E707DD7632286B6ADB /* Pods-gesture_pattern WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-gesture_pattern WatchKit Extension/Pods-gesture_pattern WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		C4267E0A6B6704C145DA3315 /* Pods-gesture_pattern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern.release.xcconfig"; path = "Target Support Files/Pods-gesture_pattern/Pods-gesture_pattern.release.xcconfig"; sourceTree = "<group>"; };
+		CD503A8024EE6C8300C1F248 /* SwiftSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD95AA9E22E1B07100B3908E /* gesture_pattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gesture_pattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD95AAA122E1B07100B3908E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD95AAA322E1B07100B3908E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD503A8124EE6C8300C1F248 /* SwiftSocket.framework in Frameworks */,
 				8A375CFC0A9AA7DEA2FE5448 /* Pods_gesture_pattern.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +211,7 @@
 		5ADF82F004ABD805F8D19FA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD503A8024EE6C8300C1F248 /* SwiftSocket.framework */,
 				7D02317F5F3E3F78CF15ED7B /* Pods_gesture_pattern.framework */,
 				3CC96D04AFF8AFA2836F412B /* Pods_gesture_pattern_WatchKit_App.framework */,
 				6D59102D6F64D2D5929BDD95 /* Pods_gesture_pattern_WatchKit_Extension.framework */,
