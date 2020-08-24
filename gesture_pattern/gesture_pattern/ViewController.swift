@@ -178,9 +178,9 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         
         if signal == "5"{
             
-//            sendRequest(string: Index+","+Index3+","+X_1.text!+","+Y_1.text!+","+Z_1.text!+","+X_2.text!+","+Y_2.text!+","+Z_2.text!+"\n", using: client!)
+            sendRequest(string: Index+","+Index3+","+X_1.text!+","+Y_1.text!+","+Z_1.text!+","+X_2.text!+","+Y_2.text!+","+Z_2.text!+"\n", using: client!)
 
-            sendRequest(string: Index+","+Index3+","+"\n", using: client!)
+//            sendRequest(string: Index+","+Index3+","+"\n", using: client!)
         }
     }
     

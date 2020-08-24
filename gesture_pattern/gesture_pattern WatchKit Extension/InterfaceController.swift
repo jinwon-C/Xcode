@@ -74,59 +74,87 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             startBtn.setTitle("Stop")
             flag = 1
             
-            motion.accelerometerUpdateInterval = 0.1
-            motion.startAccelerometerUpdates(to: OperationQueue.current!){(accelerometerData:CMAccelerometerData?, NSError) -> Void in
-                self.outputAccelerationData(acceleration: accelerometerData!.acceleration)
-                if(NSError != nil){
-                    self.error.setText("\(NSError)")
-                    NSLog("test")
-                }
-                else{
-                    
-                    let format = DateFormatter()
-                    format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-                    let currentTime = NSDate()
-                    let curTime = format.string(from: currentTime as Date)
-                    
-                    self.start = "5"
-                    if WCSession.isSupported(){
-                        self.session.sendMessage(["b":"\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)"], replyHandler: nil, errorHandler: nil)
-                        self.error.setText("Sensing")
-                        print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)")
-                    }
-                    
-                }
-            }
+//            motion.accelerometerUpdateInterval = 0.1
+//            motion.startAccelerometerUpdates(to: OperationQueue.current!){(accelerometerData:CMAccelerometerData?, NSError) -> Void in
+//                self.outputAccelerationData(acceleration: accelerometerData!.acceleration)
+//                if(NSError != nil){
+//                    self.error.setText("\(NSError)")
+//                }
+//                else{
+//
+//                    let format = DateFormatter()
+//                    format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+//                    let currentTime = NSDate()
+//                    let curTime = format.string(from: currentTime as Date)
+//
+//                    print("Acceleration")
+//                    self.start = "5"
+//                    if WCSession.isSupported(){
+//                        self.session.sendMessage(["b":"\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)"], replyHandler: nil, errorHandler: nil)
+//                        self.error.setText("Sensing")
+//                        print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+", Acceleration, "+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)")
+//                    }
+//
+//                }
+//            }
             
-            motion.gyroUpdateInterval = 0.1
-            motion.startGyroUpdates(to: OperationQueue.current!){(gyroData:CMGyroData?, NSError) -> Void in
-                self.outputGyroData(gyro: gyroData!.rotationRate)
-                if(NSError != nil){
-                    self.error.setText("\(NSError)")
-                    NSLog("test")
+//            if motion.isDeviceMotionAvailable{
+//                motion.deviceMotionUpdateInterval = 0.1
+//                motion.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(data, error) -> Void in
+//                    print(data?.rotationRate)
+//                })
+//            }
+
+            print("sensing start")
+            motion.deviceMotionUpdateInterval = 0.1
+            motion.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData, error) -> Void in
+                self.outputAccelerationData(acceleration: motionData!.userAcceleration)
+                self.outputRotationData(gyro: motionData!.rotationRate)
+
+                let format = DateFormatter()
+                format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+                let currentTime = NSDate()
+                let curTime = format.string(from: currentTime as Date)
+                print("Gyro")
+                self.start = "5"
+                if WCSession.isSupported(){
+                    self.session.sendMessage(["b":"\(self.start)"+"\(self.status)"+", Gyro, "+"\(curTime)"+","+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)"], replyHandler: nil, errorHandler: nil)
+                    self.error.setText("Sensing")
+                    print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+", Gyro, "+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)")
                 }
-                else{
-                    
-                    let format = DateFormatter()
-                    format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-                    let currentTime = NSDate()
-                    let curTime = format.string(from: currentTime as Date)
-                    
-                    self.start = "5"
-                    if WCSession.isSupported(){
-                        self.session.sendMessage(["g":"\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)"], replyHandler: nil, errorHandler: nil)
-                        self.error.setText("Sensing")
-                        print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+","+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)")
-                    }
-                    
-                }
-            }
+            })
+            
+//            motion.deviceMotionUpdateInterval = 0.1
+//            motion.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData, error) ->  Void in
+//                print("Gyro2")
+//                self.outputAccelerationData(acceleration: motionData!.userAcceleration)
+//                self.outputRotationData(gyro: motionData!.rotationRate)
+//                print("Gyro3")
+//                if(NSError() != nil){
+//                    self.error.setText("\(NSError())")
+//                }
+//                else{
+//
+//                    let format = DateFormatter()
+//                    format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+//                    let currentTime = NSDate()
+//                    let curTime = format.string(from: currentTime as Date)
+//                    print("Gyro")
+//                    self.start = "5"
+//                    if WCSession.isSupported(){
+//                        self.session.sendMessage(["b":"\(self.start)"+"\(self.status)"+", Gyro, "+"\(curTime)"+","+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)"], replyHandler: nil, errorHandler: nil)
+//                        self.error.setText("Sensing")
+//                        print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+", Gyro, "+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)")
+//                    }
+//
+//                }
+//            }
         }
         else{
             startBtn.setTitle("Start")
             flag = 0
             start = "4"
-            motion.stopAccelerometerUpdates()
+//            motion.stopAccelerometerUpdates()
             motion.stopGyroUpdates()
             error.setText("Stop")
         }
@@ -138,14 +166,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         accel_Z = String(acceleration.z)
     }
     
-    func outputGyroData(gyro: CMRotationRate){
+    func outputRotationData(gyro: CMRotationRate){
+        print("outputRotationData")
         gyro_X = String(gyro.x)
         gyro_Y = String(gyro.y)
         gyro_Z = String(gyro.z)
     }
     
     @IBAction func DisconnectBtn() {
-        motion.stopAccelerometerUpdates()
+//        motion.stopAccelerometerUpdates()
         motion.stopGyroUpdates()
         if WCSession.isSupported(){
             session.sendMessage(["b":"Disconnect"], replyHandler: nil, errorHandler: nil )
