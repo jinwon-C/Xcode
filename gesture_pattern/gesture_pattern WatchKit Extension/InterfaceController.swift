@@ -29,6 +29,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     var gyro_X: String = ""
     var gyro_Y: String = ""
     var gyro_Z: String = ""
+    var magnet_X:String = ""
+    var magnet_Y:String = ""
+    var magnet_Z:String = ""
     var timer = Timer()
     var flag: Int = 0
     var start: String = ""
@@ -97,65 +100,31 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 //
 //                }
 //            }
-            
-//            if motion.isDeviceMotionAvailable{
-//                motion.deviceMotionUpdateInterval = 0.1
-//                motion.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(data, error) -> Void in
-//                    print(data?.rotationRate)
-//                })
-//            }
 
             print("sensing start")
             motion.deviceMotionUpdateInterval = 0.1
             motion.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData, error) -> Void in
                 self.outputAccelerationData(acceleration: motionData!.userAcceleration)
                 self.outputRotationData(gyro: motionData!.rotationRate)
+//                self.outputMagnetData(magnet: motionData!.magneticField)
 
                 let format = DateFormatter()
                 format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
                 let currentTime = NSDate()
                 let curTime = format.string(from: currentTime as Date)
-                print("Gyro")
                 self.start = "5"
                 if WCSession.isSupported(){
-                    self.session.sendMessage(["b":"\(self.start)"+"\(self.status)"+", Gyro, "+"\(curTime)"+","+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)"], replyHandler: nil, errorHandler: nil)
+                    self.session.sendMessage(["b":"\(self.start)"+"\(self.status)"+",  "+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)"+","+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)"], replyHandler: nil, errorHandler: nil)
                     self.error.setText("Sensing")
-                    print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+", Gyro, "+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)")
+                    print("\(self.start)"+"\(self.status)"+",  "+"\(curTime)"+","+"\(self.accel_X)"+","+"\(self.accel_Y)"+","+"\(self.accel_Z)"+","+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)")
                 }
             })
-            
-//            motion.deviceMotionUpdateInterval = 0.1
-//            motion.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motionData, error) ->  Void in
-//                print("Gyro2")
-//                self.outputAccelerationData(acceleration: motionData!.userAcceleration)
-//                self.outputRotationData(gyro: motionData!.rotationRate)
-//                print("Gyro3")
-//                if(NSError() != nil){
-//                    self.error.setText("\(NSError())")
-//                }
-//                else{
-//
-//                    let format = DateFormatter()
-//                    format.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-//                    let currentTime = NSDate()
-//                    let curTime = format.string(from: currentTime as Date)
-//                    print("Gyro")
-//                    self.start = "5"
-//                    if WCSession.isSupported(){
-//                        self.session.sendMessage(["b":"\(self.start)"+"\(self.status)"+", Gyro, "+"\(curTime)"+","+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)"], replyHandler: nil, errorHandler: nil)
-//                        self.error.setText("Sensing")
-//                        print("\(self.start)"+"\(self.status)"+","+"\(curTime)"+", Gyro, "+"\(self.gyro_X)"+","+"\(self.gyro_Y)"+","+"\(self.gyro_Z)")
-//                    }
-//
-//                }
-//            }
         }
         else{
             startBtn.setTitle("Start")
             flag = 0
             start = "4"
-//            motion.stopAccelerometerUpdates()
-            motion.stopGyroUpdates()
+            motion.stopDeviceMotionUpdates()
             error.setText("Stop")
         }
     }
@@ -167,15 +136,19 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     func outputRotationData(gyro: CMRotationRate){
-        print("outputRotationData")
         gyro_X = String(gyro.x)
         gyro_Y = String(gyro.y)
         gyro_Z = String(gyro.z)
     }
     
+//    func outputMagnetData(magnet: CMCalibratedMagneticField){
+//        magnet_X = String(magnet.field.x)
+//        magnet_Y = String(magnet.field.y)
+//        magnet_Z = String(magnet.field.z)
+//    }
+    
     @IBAction func DisconnectBtn() {
-//        motion.stopAccelerometerUpdates()
-        motion.stopGyroUpdates()
+        motion.stopDeviceMotionUpdates()
         if WCSession.isSupported(){
             session.sendMessage(["b":"Disconnect"], replyHandler: nil, errorHandler: nil )
         }

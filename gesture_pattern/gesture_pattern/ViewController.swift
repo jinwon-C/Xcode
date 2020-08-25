@@ -26,7 +26,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     }
     
     @IBOutlet weak var statusLbl: UILabel!
-    @IBOutlet weak var plate: UIImageView!
+//    @IBOutlet weak var plate: UIImageView!
     
     @IBOutlet weak var X_1: UILabel!
     @IBOutlet weak var Y_1: UILabel!
@@ -70,8 +70,8 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        img = UIImage(named: "3x3Plate.png")
-        plate.image = img
+//        img = UIImage(named: "3x3Plate.png")
+//        plate.image = img
         
         btnFreqStop.isEnabled = false
         btnRecordFinish.isEnabled = false
@@ -178,9 +178,9 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         
         if signal == "5"{
             
-            sendRequest(string: Index+","+Index3+","+X_1.text!+","+Y_1.text!+","+Z_1.text!+","+X_2.text!+","+Y_2.text!+","+Z_2.text!+"\n", using: client!)
+//            sendRequest(string: Index+","+Index3+","+X_1.text!+","+Y_1.text!+","+Z_1.text!+","+X_2.text!+","+Y_2.text!+","+Z_2.text!+"\n", using: client!)
 
-//            sendRequest(string: Index+","+Index3+","+"\n", using: client!)
+            sendRequest(string: Index+","+Index3+","+"\n", using: client!)
         }
     }
     
