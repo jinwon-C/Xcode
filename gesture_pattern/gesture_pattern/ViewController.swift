@@ -26,7 +26,6 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     }
     
     @IBOutlet weak var statusLbl: UILabel!
-//    @IBOutlet weak var plate: UIImageView!
     
     @IBOutlet weak var X_1: UILabel!
     @IBOutlet weak var Y_1: UILabel!
@@ -41,6 +40,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     @IBOutlet weak var btnRecordStart: UIButton!
     @IBOutlet weak var btnRecordFinish: UIButton!
     
+    @IBOutlet weak var state: UILabel!
     
     var motion = CMMotionManager()
     let host = "192.168.0.137"
@@ -70,8 +70,8 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        img = UIImage(named: "3x3Plate.png")
-//        plate.image = img
+        
+        
         
         btnFreqStop.isEnabled = false
         btnRecordFinish.isEnabled = false
@@ -97,14 +97,14 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     }
     
     private func sendRequest(string: String, using client: TCPClient) -> String? {
-        appendToTextField(string: "Sending data ...")
+//        appendToTextField(string: "Sending data ...")
         
         switch client.send(string: string) {
         case .success:
-            appendToTextField(string: "Success")
+//            appendToTextField(string: "Success")
             return nil
         case .failure(let error):
-            appendToTextField(string: String(describing: error))
+//            appendToTextField(string: String(describing: error))
             return nil
         }
     }
@@ -189,7 +189,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
         if flag == 0 {
             btn_Name()
             server_connect()
-            startRecording()
+//            startRecording()
         }
         else{
             btn_Name()
@@ -208,6 +208,13 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     
     @IBAction func btn_REC(_ sender : UIButton){
         startRecording()
+//            DispatchQueue.main.sync {
+//                self.btnStart.setTitle("Prepare...", for: .normal)
+//            }
+        print("finishing recording")
+        sleep(2)
+        print("start recording again")
+        
     }
     
     @IBAction func btn_finish(_ sender : UIButton){
@@ -306,31 +313,46 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
     }
     
     func startRecording(){
-        audioSession.requestRecordPermission({(allowed: Bool) -> Void in print("Accepted")} )
-        //make directory
-        
-        let audioFilename = getDocumentsDirectory().appendingPathComponent(timeStamp()+".wav")
-        let settings = [
-            AVFormatIDKey : Int(kAudioFormatLinearPCM),
-            AVSampleRateKey : 44100,
-            AVNumberOfChannelsKey : 1,
-            AVLinearPCMBitDepthKey : 16,
-            AVLinearPCMIsFloatKey : false,
-            AVLinearPCMIsBigEndianKey : false,
-            AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
-            ] as [String : Any]
-        do{
-            btnRecordFinish.isEnabled = true
-            btnRecordStart.isEnabled = false
-            btnRecordStart.setTitle("Now Recording", for: .normal)
+
+        for index in 1...13 {
+            audioSession.requestRecordPermission({(allowed: Bool) -> Void in print("Accepted")} )
+            //make directory
             
-            audioRecorder = try AVAudioRecorder(url:audioFilename, settings: settings)
-            audioRecorder.delegate = self
-            print("Recording Start : "+timeStamp())
-            audioRecorder.record()
-        } catch{
-            finishRecording(success : false)
+            let audioFilename = getDocumentsDirectory().appendingPathComponent(timeStamp()+".wav")
+            let settings = [
+                AVFormatIDKey : Int(kAudioFormatLinearPCM),
+                AVSampleRateKey : 44100,
+                AVNumberOfChannelsKey : 1,
+                AVLinearPCMBitDepthKey : 16,
+                AVLinearPCMIsFloatKey : false,
+                AVLinearPCMIsBigEndianKey : false,
+                AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
+                ] as [String : Any]
+            do{
+                print("Preparing")
+                sleep(2)
+                btnRecordFinish.isEnabled = true
+                btnRecordStart.isEnabled = false
+                btnRecordStart.setTitle("Now Recording", for: .normal)
+                
+                audioRecorder = try AVAudioRecorder(url:audioFilename, settings: settings)
+                audioRecorder.delegate = self
+                print("Recording Start : "+timeStamp())
+                audioRecorder.record()
+                
+                sleep(3)
+                
+                finishRecording(success: true)
+                DispatchQueue.global().sync {
+                    print("\(index)th finishied")
+                }
+                btnStart.setTitle("Preparing", for: .normal)
+
+            } catch{
+                finishRecording(success : false)
+            }
         }
+        btnStart.setTitle("recording finished", for: .normal)
     }
     
     func getDocumentsDirectory() -> URL{    //녹음 파일 경로 설정 함수

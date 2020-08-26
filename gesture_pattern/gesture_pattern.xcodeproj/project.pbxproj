@@ -30,7 +30,6 @@
 		CD95AAE122E1B07200B3908E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD95AAE022E1B07200B3908E /* Assets.xcassets */; };
 		CDA143B622F17AB30068903E /* AVTonePlayerUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA143B522F17AB20068903E /* AVTonePlayerUnit.swift */; };
 		CDBB5D6122E55C9A0088240D /* PTsensorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBB5D6022E55C9A0088240D /* PTsensorInterfaceController.swift */; };
-		CDCF185623011033005FA824 /* 3x3Plate.png in Resources */ = {isa = PBXBuildFile; fileRef = CDCF185523011033005FA824 /* 3x3Plate.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,7 +139,6 @@
 		CDA143B522F17AB20068903E /* AVTonePlayerUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVTonePlayerUnit.swift; sourceTree = "<group>"; };
 		CDBB5D6022E55C9A0088240D /* PTsensorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTsensorInterfaceController.swift; sourceTree = "<group>"; };
 		CDBB5D6222E55FD80088240D /* ptDraw WatchKit Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ptDraw WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		CDCF185523011033005FA824 /* 3x3Plate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3x3Plate.png; path = ../../../../../Downloads/3x3Plate.png; sourceTree = "<group>"; };
 		E32441F7B864E61AE6DEA0A8 /* Pods-gesture_pattern WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-gesture_pattern WatchKit Extension/Pods-gesture_pattern WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		E8EDB2202E45A7065135C607 /* Pods-gesture_pattern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern.debug.xcconfig"; path = "Target Support Files/Pods-gesture_pattern/Pods-gesture_pattern.debug.xcconfig"; sourceTree = "<group>"; };
 		F42875553810BBCA54C06980 /* Pods-gesture_pattern WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gesture_pattern WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-gesture_pattern WatchKit App/Pods-gesture_pattern WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 				CD95AAA322E1B07100B3908E /* ViewController.swift */,
 				CD95AAA522E1B07100B3908E /* Main.storyboard */,
 				CD95AAA822E1B07100B3908E /* Assets.xcassets */,
-				CDCF185523011033005FA824 /* 3x3Plate.png */,
 				CD95AAAA22E1B07100B3908E /* LaunchScreen.storyboard */,
 				CD95AAAD22E1B07100B3908E /* Info.plist */,
 			);
@@ -469,7 +466,6 @@
 				CD95AAAC22E1B07100B3908E /* LaunchScreen.storyboard in Resources */,
 				CD95AAA922E1B07100B3908E /* Assets.xcassets in Resources */,
 				CD95AAA722E1B07100B3908E /* Main.storyboard in Resources */,
-				CDCF185623011033005FA824 /* 3x3Plate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

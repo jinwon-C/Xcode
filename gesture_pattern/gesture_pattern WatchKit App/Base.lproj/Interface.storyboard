@@ -12,6 +12,11 @@
             <objects>
                 <controller identifier="PTdataCollect" id="2AL-lS-Dbr" customClass="PTsensorInterfaceController" customModule="gesture_pattern_WatchKit_Extension">
                     <items>
+                        <button width="1" alignment="left" title="0" id="WHm-NR-rzD">
+                            <connections>
+                                <action selector="pt0" destination="2AL-lS-Dbr" id="3kq-Nu-jcz"/>
+                            </connections>
+                        </button>
                         <button width="1" alignment="left" title="1" id="JYb-TF-YHb">
                             <connections>
                                 <action selector="pt1" destination="2AL-lS-Dbr" id="Eem-oO-ZP6"/>
@@ -57,9 +62,9 @@
                                 <action selector="pt9" destination="2AL-lS-Dbr" id="ZSi-U5-tyh"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="10" id="WHm-NR-rzD">
+                        <button width="1" alignment="left" title="Nothing" id="sDq-Zn-eeQ">
                             <connections>
-                                <action selector="pt10" destination="2AL-lS-Dbr" id="pJk-JI-tzg"/>
+                                <action selector="ptN" destination="2AL-lS-Dbr" id="jJf-oV-jRx"/>
                             </connections>
                         </button>
                     </items>

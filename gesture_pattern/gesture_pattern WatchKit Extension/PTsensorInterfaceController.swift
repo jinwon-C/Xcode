@@ -48,6 +48,16 @@ class PTsensorInterfaceController: WKInterfaceController, WCSessionDelegate {
         
     }
     // 애플워치 버튼 event 발생 함수들
+    @IBAction func pt0() {
+        if WCSession.isSupported(){
+            session.sendMessage(["b":"Connect"], replyHandler: nil, errorHandler: nil)
+            print("connect")
+        }
+        
+        pushController(withName: "PTsensing", context: "0")
+        
+    }
+    
     @IBAction func pt1() {
         if WCSession.isSupported(){
             session.sendMessage(["b":"Connect"], replyHandler: nil, errorHandler: nil)
@@ -128,14 +138,12 @@ class PTsensorInterfaceController: WKInterfaceController, WCSessionDelegate {
         
         pushController(withName: "PTsensing", context: "9")
     }
-    
-    @IBAction func pt10() {
+    @IBAction func ptN() {
         if WCSession.isSupported(){
             session.sendMessage(["b":"Connect"], replyHandler: nil, errorHandler: nil)
             print("connect")
         }
-        
-        pushController(withName: "PTsensing", context: "a")
-        
+        pushController(withName: "PTsensing", context: "n")
     }
+    
 }
