@@ -330,7 +330,7 @@ class ViewController: UIViewController, WCSessionDelegate, AVAudioRecorderDelega
                 ] as [String : Any]
             do{
                 print("Preparing")
-                sleep(2)
+                sleep(1)
                 btnRecordFinish.isEnabled = true
                 btnRecordStart.isEnabled = false
                 btnRecordStart.setTitle("Now Recording", for: .normal)
